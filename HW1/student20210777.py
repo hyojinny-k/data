@@ -24,7 +24,7 @@ for s in score:
 
 countA = (wr - 1) * 0.3
 countB = (wr - 1) * 0.7
-countC = (wr - 1) - countA - countB
+countC = (wr - 1) - countB
 
 for r in range(2, wr + 1):
     if ws.cell(row=r, column=7).value < 40:
