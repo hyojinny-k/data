@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-f1 = open("movies_exp.txt", "rt")
-f2 = open("output.txt", "wt")
+f1 = open("movie.dat", "rt")
+f2 = open("movieoutput.txt", "wt")
 genre = []
 while True:
     row = f1.readline().replace("\n", "")
