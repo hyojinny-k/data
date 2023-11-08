@@ -18,8 +18,6 @@ while True:
     result.append(line)
 
 result.sort()
-for r in result:
-    print(r)
 i = 1
 while True:
     # f2.write(r)
