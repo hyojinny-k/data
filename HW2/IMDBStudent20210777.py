@@ -14,7 +14,11 @@ while True:
     else:
         genre.append(line[-1])
 
-list_genre = list(set(genre))
+list_genre = []
+for g in genre:
+    if g not in list_genre:
+        list_genre.append(g)
+
 for g in list_genre:
     s = g + ' ' + str(genre.count(g)) + '\n'
     f2.write(s)
