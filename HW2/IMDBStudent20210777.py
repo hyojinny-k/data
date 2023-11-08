@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 f1 = open("movies_exp.txt", "rt")
 f2 = open("output.txt", "wt")
 genre = []
