@@ -18,8 +18,10 @@ while True:
     result.append(line)
 
 result.sort()
-i = 1
 for r in result:
+    print(r)
+i = 1
+while True:
     # f2.write(r)
     if result[i][0] == result[i - 1][0] and result[i][1] == result[i - 1][1]:
         result[i][2] = int(result[i][2]) + int(result[i-1][2])
@@ -27,6 +29,8 @@ for r in result:
         del result[i-1]
     else:
         i += 1
+    if i == len(result):
+        break
 for r in result:
     f2.write(r[0] + ',' + r[1] + ' ' + str(r[2]) + ',' + str(r[3]) + '\n')
 f1.close()
