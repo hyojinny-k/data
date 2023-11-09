@@ -5,7 +5,6 @@ with open("movie.dat", "rt") as f1:
         line.strip('\n')
         genres = line.split('::')
         list = genres[2].split('|')
-
         for l in list:
             if l not in genre:
                 genre[l] = 1
