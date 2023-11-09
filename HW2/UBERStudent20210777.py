@@ -1,12 +1,17 @@
 #!/usr/bin/python3
 import datetime
+import sys
+
+inputfile = sys.argv[1]
+outputfile = sys.argv[2]
+
 def getDay(month, date, year):
-    r = ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN']
-    return r[datetime.date(int(year), int(month), int(date)).weekday()]
+    d = ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN']
+    return d[datetime.date(int(year), int(month), int(date)).weekday()]
 
 dic = dict()
 valDic = dict()
-with open("uber.dat", "rt") as f1:
+with open(inputfile, "rt") as f1:
     for line in f1:
         list = line.strip('\n').split(',')
         dayList = list[1].split('/')
@@ -20,7 +25,7 @@ with open("uber.dat", "rt") as f1:
             temp2 = int(tList[1]) + int(list[3])
             dic[key] = str(temp1) + "," + str(temp2)
             
-with open("uberoutput.txt", "wt") as f2:
+with open(outputfile, "wt") as f2:
     for k in dic.keys():
         f2.write(k + " " + dic[k] + "\n")
 
