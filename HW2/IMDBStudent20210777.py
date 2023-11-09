@@ -14,3 +14,6 @@ with open("movie.dat", "rt") as f1:
 with open("movieoutput.txt", "wt") as f2:
     for k in genre.keys():
         f2.write(k + ' ' + str(genre[k]) + '\n')
+        
+f1.close()
+f2.close()
