@@ -2,6 +2,7 @@
 import sys
 inputfile = sys.argv[1]
 outputfile = sys.argv[2]
+
 genre = dict()
 
 with open(inputfile, "rt") as f :
