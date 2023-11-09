@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 import sys
+
 inputfile = sys.argv[1]
 outputfile = sys.argv[2]
 
 genre = dict()
-
-with open(inputfile, "rt") as f :
-    for line in f :
+with open(inputfile, "rt") as f1 :
+    for line in f1 :
         genres = line.strip('\n').split('::')
         list = genres[2].split('|')
         for l in list :
@@ -15,6 +15,9 @@ with open(inputfile, "rt") as f :
             else :
                 genre[l] += 1
                         
-with open(outputfile, "wt") as f :
+with open(outputfile, "wt") as f2 :
     for k in genre.keys():
-        f.write(k + " " + str(genre[k]) + "\n")
+        f2.write(k + " " + str(genre[k]) + "\n")
+
+f1.close()
+f2.close()
