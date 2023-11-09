@@ -1,26 +1,17 @@
 #!/usr/bin/python3
-f1 = open("movie.dat", "rt")
-f2 = open("movieoutput.txt", "wt")
-genre = []
-while True:
-    row = f1.readline().replace("\n", "")
-    if not row:
-        break
-    line = row.split('::')
-    if line[-1].find('|') > -1:
-        temp_genre = line[-1].split('|')
-        for g in temp_genre:
-            genre.append(g)
-    else:
-        genre.append(line[-1])
+genre = dict()
+with open("movies_exp.txt", "rt") as f1:
+    for line in f1:
+        line.strip('\n')
+        genres = line.split('::')
+        list = genres[2].split('|')
 
-list_genre = []
-for g in genre:
-    if g not in list_genre:
-        list_genre.append(g)
+        for l in list:
+            if l not in genre:
+                genre[l] = 1
+            else:
+                genre[l] += 1
 
-for g in list_genre:
-    s = g + ' ' + str(genre.count(g)) + '\n'
-    f2.write(s)
-f1.close()
-f2.close()
+with open("imdboutputex.txt", "wt") as f2:
+    for k in genre.keys():
+        f2.write(k + ' ' + str(genre[k]) + '\n')
