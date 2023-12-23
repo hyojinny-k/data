@@ -52,9 +52,9 @@ testFileList = listdir(testDir)
 length = len(testFileList)
 matrix, labels = createDataSet(trainingDir)
 
-for k in range(1, 21):
-    count = 0
-    error = 0
+for k in range(1, 21): # 1~20
+    count = 0 # 전체 파일 개수
+    error = 0 # 예측을 실패한 경우
 
     for i in range(length):
         answer = int(testFileList[i].split('_')[0])
@@ -63,4 +63,4 @@ for k in range(1, 21):
         count += 1
         if answer != classifiedResult:
             error += 1
-    print(int(error / count * 100))
+    print(int(error / count * 100)) # 에러율 -> int
